@@ -4,6 +4,7 @@ package nikit.tacocloud.controllers;
 import lombok.extern.slf4j.Slf4j;
 import nikit.tacocloud.entities.TacoOrder;
 import nikit.tacocloud.repositories.OrderRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +22,7 @@ import javax.validation.Valid;
 @SessionAttributes("tacoOrder")
 public class OrderController {
     private OrderRepository orderRepo;
+    @Autowired
     public OrderController(OrderRepository orderRepo) {
         this.orderRepo = orderRepo;
     }
